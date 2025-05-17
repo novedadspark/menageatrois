@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triángulo Ardiente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        .card {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 14px 28px;
+            margin: 12px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            width: 85%;
+            max-width: 320px;
+        }
+        .verde { background-color: #C2185B; color: white; }
+        .naranja { background-color: #7B1FA2; color: white; }
+        .rojo { background-color: #D32F2F; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Triángulo Ardiente</h1>
+    <p>Elige un nivel para sacar una carta <br><span style='font-size:22px;'>👩‍❤️‍👨‍❤️‍👨 🔥</span></p>
+
+    <button class="verde" onclick="mostrarCartaVerde()">💋 Nivel Sensual</button><br>
+    <button class="naranja" onclick="mostrarCartaNaranja()">👅 Nivel Oral / Erótico</button><br>
+    <button class="rojo" onclick="mostrarCartaRojo()">🍑 Nivel Intenso / Penetración</button>
+
+    <div class="card" id="carta">Tu carta aparecerá aquí</div>
+
+    <script>
+        var cartasVerde = ["Besa el cuello de los otros dos, lentamente.", "Lame los pezones de una persona mientras la otra te acaricia.", "Besa en la boca a ambos durante un minuto, turn\u00e1ndote.", "Da un masaje con aceite a uno, mientras haces contacto visual con el otro.", "Lame el abdomen y parte interna de los muslos sin tocar genitales.", "Si\u00e9ntate en el regazo de uno mientras besas al otro.", "Cierra los ojos y recibe caricias suaves de ambos al mismo tiempo.", "Desviste lentamente a una persona mientras miras a la otra.", "Besa el trasero de uno y acaricia suavemente al otro.", "Imita un gemido placentero y los otros deben repetirlo.", "Recorre con tu lengua el contorno del cuerpo de uno.", "Haz un striptease mientras los otros te miran.", "Acuesta a alguien y explora su cuerpo solo con la lengua (sin genitales).", "Haz que uno se siente en tu cara (ropa puesta) mientras besas al otro.", "Jueguen a las miradas: quien parpadea primero, recibe besos de los otros dos.", "Lame con lentitud la espalda baja de una persona.", "Intercambien prendas de ropa \u00edntima entre los tres.", "Ac\u00e9rcate a los genitales de uno, respira hondo, pero no toques.", "Acaricia los gl\u00fateos de ambos mientras los besas.", "Elige a alguien para que te d\u00e9 caricias suaves en el ano con lengua o dedo (sobre la ropa)."];
+        var cartasNaranja = ["Lame los genitales de uno durante un minuto mientras el otro te besa.", "Juega con los pezones de ambos al mismo tiempo.", "Lame el ano de quien t\u00fa elijas.", "Mast\u00farbate mientras los otros dos se besan apasionadamente.", "Da sexo oral durante 2 minutos al que est\u00e9 m\u00e1s caliente.", "Deja que uno se siente en tu cara mientras acaricias al tercero.", "Lame los genitales de uno mientras el otro te penetra con un dedo.", "Los tres deben estar en contacto piel con piel durante 3 minutos sin hablar.", "Penetra con un dedo a uno mientras el otro te besa el cuello.", "Mueve tus caderas simulando penetraci\u00f3n sin tocar genitales.", "Haz una ronda de besos con lengua en los genitales.", "Pide que los otros dos te acaricien mientras t\u00fa eliges a qui\u00e9n lamer.", "Usa tu lengua en el ano o entrepierna de uno mientras masturbas al otro.", "Recibe una penetraci\u00f3n (dedo o juguete) mientras haces oral.", "Haz que uno te bese mientras el otro se masturba encima tuyo.", "Mast\u00farbate suavemente al ritmo de los gemidos de los otros.", "Chupa los dedos de uno mientras te acarician el ano o genitales.", "Haz un juego de \u201csimon dice\u201d: da \u00f3rdenes er\u00f3ticas a los otros dos.", "Juega al \u201cor\u00e1culo del placer\u201d: ellos te dicen qu\u00e9 hacer con tu boca y manos.", "Simula una escena porno con besos, oral y caricias expl\u00edcitas sin penetrar."];
+        var cartasRojo = ["Hazle sexo oral a uno mientras eres penetrado/a por el otro.", "Realiza una doble penetraci\u00f3n (vaginal/anal o con juguete) si hay consentimiento.", "Si\u00e9ntate en el pene o dildo de uno mientras haces oral al otro.", "Recibe sexo oral mientras el otro te penetra con fuerza.", "Turno de trencito: oral, penetraci\u00f3n y masturbaci\u00f3n simult\u00e1nea.", "Lame y chupa el semen o l\u00edquido preseminal de ambos.", "Pide que te penetren en turnos mientras te dan besos profundos.", "Uno se sienta en tu cara mientras el otro penetra desde atr\u00e1s.", "Juega con un plug anal mientras haces doble oral.", "Recibe caricias con lengua y dedos por todos lados al mismo tiempo.", "Terminen los tres acarici\u00e1ndose genitales mutuamente hasta gemir juntos.", "Uno penetra y el otro chupa el pene o cl\u00edtoris al mismo tiempo.", "Acaba en la boca o cara de uno mientras besas al tercero.", "Simula una escena porno con turnos de penetraci\u00f3n, caricias y sexo oral.", "Hagan un tr\u00edo en posici\u00f3n espejo (uno arriba, otro abajo, uno al medio).", "Haz que te penetren mientras tienes el control con las manos atadas.", "Haz que ambos eyaculen o lleguen al orgasmo cerca de ti (cuerpo, boca, pecho).", "Juega con roles: sumiso/a, dominante, obediente, etc.", "Elige con qui\u00e9n acabar\u00e1s y c\u00f3mo. El tercero debe observar y tocarse.", "Sexo anal (si hay acuerdo), mientras el otro besa y estimula intensamente."];
+
+        function mostrarCartaVerde() {
+            var seleccion = cartasVerde[Math.floor(Math.random() * cartasVerde.length)];
+            document.getElementById('carta').innerHTML = '[Nivel Sensual 💋] ' + seleccion;
+        }
+        function mostrarCartaNaranja() {
+            var seleccion = cartasNaranja[Math.floor(Math.random() * cartasNaranja.length)];
+            document.getElementById('carta').innerHTML = '[Nivel Erótico 👅] ' + seleccion;
+        }
+        function mostrarCartaRojo() {
+            var seleccion = cartasRojo[Math.floor(Math.random() * cartasRojo.length)];
+            document.getElementById('carta').innerHTML = '[Nivel Intenso 🍑] ' + seleccion;
+        }
+    </script>
+</body>
+</html>
